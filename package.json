@@ -1,0 +1,22 @@
+{
+  "name": "testuino",
+  "version": "0.0.0",
+  "description": "A buildbot for arduino and github",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "Arduino",
+    "Testing",
+    "Build",
+    "Bot"
+  ],
+  "author": "Swift <theycallmeswift@gmail.com>",
+  "license": "Beerware",
+  "dependencies": {
+    "express": "~3.0.0rc5",
+    "johnny-five": "~0.5.14"
+  }
+}
