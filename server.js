@@ -1,4 +1,5 @@
 var util = require('util')
+  , test_bot = require('./test_bot')
   , express = require('express')
   , app = express()
   , port = process.env.PORT || 3000;
@@ -15,10 +16,17 @@ app.post('/github', function(req, res) {
   }
 
   var payload = JSON.parse(req.body.payload)
-    , url = payload.repository.url
-    , lastCommit = payload.commits[0];
+    , name = payload.repository.name
+    , url = "git@github.com:" + payload.repository.owner.name + '/' + name + '.git'
+    , lastCommit = payload.commits[payload.commits.length - 1];
+
+  if(!lastCommit) {
+    util.log("Nothing to commit");
+    return res.send("OK");
+  }
 
   util.log("Testing commit by " + lastCommit.author.name + " for " + url);
+  test_bot.test(name, url, lastCommit.id, console.log);
 
   res.send("OK");
 });
