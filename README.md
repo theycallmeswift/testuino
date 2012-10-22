@@ -7,6 +7,9 @@ finishes, a buzzer sounds an either a green or red LED turns on to indicate the
 status.  At the end of the build process, the owner of the branch gets an email
 (powered by [SendGrid](http://sendgrid.com)) updating them with the status.
 
+**NOTE**: *This is a work in progress. Right now Testuino only supports projects
+with a rake task for tests.  Video and tutorial comming soon.*
+
 ![WIP](https://raw.github.com/theycallmeswift/testuino/master/photos/wip.jpeg)
 
 ## Setup
